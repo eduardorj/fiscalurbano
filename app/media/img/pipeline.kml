@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>SIE PB.kml</name>
+	<open>1</open>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aa00</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_cross-hairs_hl">
+		<IconStyle>
+			<Icon>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aa00</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_cross-hairs">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_cross-hairs</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_cross-hairs_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aa00</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_cross-hairs">
+		<IconStyle>
+			<Icon>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aa00</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>Meus lugares</name>
+		<open>1</open>
+		<Style>
+			<ListStyle>
+				<listItemType>check</listItemType>
+				<ItemIcon>
+					<state>open</state>
+					<href>:/mysavedplaces_open.png</href>
+				</ItemIcon>
+				<ItemIcon>
+					<state>closed</state>
+					<href>:/mysavedplaces_closed.png</href>
+				</ItemIcon>
+				<bgColor>00ffffff</bgColor>
+				<maxSnippetLines>2</maxSnippetLines>
+			</ListStyle>
+		</Style>
+		<Placemark>
+			<name>GPP 1</name>
+			<address>Caraguatatuba - São Paulo, República Federativa do Brasil</address>
+			<LookAt>
+				<longitude>-45.411901</longitude>
+				<latitude>-23.622528</latitude>
+				<altitude>0</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<range>46921.578125</range>
+			</LookAt>
+			<StyleMap>
+				<Pair>
+					<key>normal</key>
+					<Style>
+						<IconStyle>
+							<Icon>
+								<href>http://maps.gstatic.com/intl/pt-BR_ALL/mapfiles/kml/pal3/icon60.png</href>
+							</Icon>
+						</IconStyle>
+					</Style>
+				</Pair>
+				<Pair>
+					<key>highlight</key>
+					<Style>
+						<IconStyle>
+							<scale>1.3</scale>
+							<Icon>
+								<href>http://maps.gstatic.com/intl/pt-BR_ALL/mapfiles/kml/pal3/icon52.png</href>
+							</Icon>
+						</IconStyle>
+					</Style>
+				</Pair>
+			</StyleMap>
+			<Point>
+				<coordinates>-45.411901,-23.622528,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>GPP 2</name>
+			<address>Cabiúnas, Macaé - RJ, República Federativa do Brasil</address>
+			<LookAt>
+				<longitude>-41.716667</longitude>
+				<latitude>-22.3</latitude>
+				<altitude>0</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<range>8439.231444999999</range>
+			</LookAt>
+			<StyleMap>
+				<Pair>
+					<key>normal</key>
+					<Style>
+						<IconStyle>
+							<Icon>
+								<href>http://maps.gstatic.com/intl/pt-BR_ALL/mapfiles/kml/pal3/icon60.png</href>
+							</Icon>
+						</IconStyle>
+					</Style>
+				</Pair>
+				<Pair>
+					<key>highlight</key>
+					<Style>
+						<IconStyle>
+							<scale>1.3</scale>
+							<Icon>
+								<href>http://maps.gstatic.com/intl/pt-BR_ALL/mapfiles/kml/pal3/icon52.png</href>
+							</Icon>
+						</IconStyle>
+					</Style>
+				</Pair>
+			</StyleMap>
+			<Point>
+				<coordinates>-41.716667,-22.3,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PLEM 2 - JUNCAO</name>
+			<styleUrl>#m_cross-hairs</styleUrl>
+			<Point>
+				<coordinates>-42.86666666666667,-25.53333333333334,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>H - GPP1</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-44.36472054606254,-24.35110275162721,0 -45.40987391678969,-23.62461359327642,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>A - JUNCAO - H</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-44.36536399337529,-24.354037034507,0 -42.86330588508788,-25.53563757613309,0 -43.19868151706299,-25.60049114315452,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>B - C - JUNCAO</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-43.26583078351267,-25.8186270877724,0 -43.19430100800092,-25.67552765368734,0 -42.86236184618447,-25.53590727165935,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>JUNCAO - D - E - F - G</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-42.86432324305077,-25.53580960426132,0 -42.74815550670556,-25.36853254565555,0 -42.8614561260491,-25.19881969962934,0 -42.67973090182879,-24.71929078377754,0 -42.53051746305039,-24.66431290465005,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>G - GPP2</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-42.53114336286826,-24.67178860457373,0 -41.2426316194503,-22.64863216657074,0 -41.70977095243043,-22.30292772784197,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

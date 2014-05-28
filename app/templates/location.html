@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.google.com/earth/kml/2">
+<Document>
+  <name>relato.user</name>
+{% for relato in relatos %}
+  <relatomark>
+    <name>{{ relato.user }}</name>
+    <description><![CDATA[
+      {{ relato.text }}
+    ]]>
+    </description>
+	<Point>
+	<coordinates>{{ relato.lon }}, {{ relato.lat }}</coordinates>
+	</Point>
+  </relatomark>
+{% endfor %}
+</Document>
+</kml>

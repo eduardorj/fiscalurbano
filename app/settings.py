@@ -1,17 +1,20 @@
-"""
-Django settings for app project.
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
 
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
-"""
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(__file__)
 
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'app.settings'
+
+# Parse database configuration from $DATABASE_URL
+#import dj_database_url
+
+#DATABASES['default'] =  dj_database_url.config()
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -24,7 +27,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -36,6 +40,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Uncomment the next line to enable the admin:
+    'django.contrib.admin',
+    # Uncomment the next line to enable admin documentation:
+    'django.contrib.admindocs',
+    'app.core',
+    'app.fiscalizacao'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -79,4 +89,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+TEMPLATE_DIRS = (
+    #'django.template.loaders.filesystem.Loader',
+    #'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
+    os.path.join(PROJECT_DIR, 'templates'),
+)
+
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
+

@@ -1,0 +1,93 @@
+/***********
+	css reset 
+************/
+
+* {	list-style: none;	border: 0;	text-decoration: none;outline:0;}
+input, label, images {vertical-align: middle;}
+
+/* separator */
+.jfa {position:absolute; left:0px;top:0px; width:0px; height:0px;font-size:0; visibility:hidden;}
+.sep {margin-bottom: 40px !important;}
+.clear {clear:both;}
+.left {float:left;}
+.right {float:right;}
+.alignleft {float:left;margin-right:30px;margin-bottom:30px;}
+.alignright {float:right;margin-left:30px;margin-bottom:30px;}
+hr {display: none;}
+
+/* fixing firefox bug */
+div:after, ol:after, li:after, form:after, ul:after, dl:after,q:after {content:".";display:block;clear:both;visibility:hidden;height:0;overflow:hidden;}
+
+
+/***********
+	structure
+************/
+html {height: 100%;}
+body {color:#000;text-align: left;font: normal 10px/1.1em Arial, Tahoma, Helvetica, sans-serif;background:  #fff;overflow-x: hidden; margin:0; padding:0;}
+/*.wrap {width:980px;height:100%;margin: 0 auto;text-align:left;padding: 0 10px;position: relative;}*/
+#header {height:auto;background:#10100f url(../images/bg-header.jpg) repeat-x left top;position:relative;z-index:3;padding:0px 30px;
+box-shadow: 0 0 50px 12px #000000;
+-moz-box-shadow: 0 0 50px 12px #000000;
+-webkit-box-shadow: 0 0 50px 12px #000000;
+}
+#content {padding:0 0 60px; height:100%;clear:both;background:#014861 url(../images/bg-content.jpg) repeat-x left bottom;color:#2b2b2b;}
+#footer {z-index:1;position:absolute;bottom:0;left:0;right:0;height:25px;overflow:hidden;box-shadow: 0 0 50px 12px #000000;
+-moz-box-shadow: 0 0 50px 12px #000000;
+-webkit-box-shadow: 0 0 50px 12px #000000;
+}
+.faixa {height:auto;background:#e8e4da url(../images/bg-faixa.jpg) repeat-x left top;position:relative;z-index:2;padding:10px 30px;border-bottom:1px solid #b7b4ac;
+/*shadow*/-moz-box-shadow: 0 1px 4px #333; -webkit-box-shadow: 0 1px 4px #333; box-shadow: 0 1px 4px #333;}
+.banners {z-index:1;position:absolute;bottom:53px;left:0;right:0;padding:10px 30px;}
+
+
+
+
+
+
+/***********
+	header
+************/
+#header h1 {width:321px; height:48px;float:left;}
+#header h1 a {width:321px; height:55px; display: inline-block; background:transparent url(../img/logo.png) no-repeat left top;text-indent:-999px; overflow: hidden;}
+#header .form {float:right;margin-top:10px;}
+.choose-city span, .from input, .to INPUT {background:#f0ede7;font-size:1.2em; font-family: inherit; color:#2b2b2b; line-height:1em; letter-spacing:-.02em;padding:0px;display: block; height:14px;
+/*radius*/-moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;border-radius: 5px;}
+.choose-city {width:165px;float:left;margin-right:10px;position:relative;}
+.choose-city span {background: #f0ede7 url(../images/city-down.png) no-repeat 145px center;padding-right:20px;}
+.choose-city span.active {background: #f0ede7 url(../images/city-up.png) no-repeat 145px center;}
+.choose-city ul {display: block;background: #f0ede7;position:absolute; top:22px;right:0;padding:5px;width:535px;
+/*shadow*/-moz-box-shadow: 0px 1px 1px #333; -webkit-box-shadow: 0px 1px 1px #333; box-shadow: 0px 1px 1px #333;
+/*radius*/-moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;border-radius: 5px;}
+.choose-city ul li {display: inline-block; width:165px;margin:0 5px 5px;}
+.choose-city ul li a {padding:8px;font-size:1.1em; color:#2b2b2b; line-height:1em; letter-spacing:-.01em;display: block;}
+.choose-city ul li a:hover {background:#e7d300;
+/*radius*/-moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;border-radius: 5px;}
+.from, .to, .calcular {width:145px; position:relative; float:left;margin-right:10px;}
+.from .pin, .to .pin  {position:absolute; top:-5px;left:-5px;width:19px; height:16px;background: transparent url(../images/from-pin.png) no-repeat left top;}
+.to .pin {left: auto;right:-5px;background: transparent url(../images/to-pin.png) no-repeat left top;}
+.from input {color:#457900;}
+.to input {color:#9d0000;}
+.calcular {margin-right:0;width:auto;}
+.calcular input {background: transparent url(../images/bt-calcular.png) no-repeat left top;font-size:1.1em; font-weight: bolder; font-family: inherit; color:#2b2b2b; line-height:1em; letter-spacing:-.02em;display: block; height:29px;width: 79px;vertical-align: middle; text-align: center;cursor:pointer;
+/*radius*/-moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;border-radius: 5px;}
+.calcular input:hover {background: transparent url(../images/bt-calcular.png) no-repeat left bottom;}
+
+
+
+
+/***********
+	map
+************/
+#map {width:100%;height:86%;z-index:0;position:absolute;top:75;bottom:73px;left:0;right:0;background: #99b3cc}
+
+
+
+
+/***********
+	footer
+************/
+.footer-01 {height:auto;background:#e8e4da;position:relative;z-index:1;padding:8px 30px;color:#777;}
+.footer-01 p {text-align:center; font-size:1.1em;line-height:1.1em;}
+.footer-01 p strong {color:#c00;}
+.footer-02 {height:auto;background:#10100f url(../images/bg-header.jpg) repeat-x left -7px;position:relative;z-index:1;padding:7px 10px;color:#b7b4ac;}
+
