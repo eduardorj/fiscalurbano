@@ -1,5 +1,5 @@
 
-
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -71,6 +71,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+#DATABASES['default'] = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
