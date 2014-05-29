@@ -2,6 +2,7 @@
 from django.db import models
 
 class Relato(models.Model):
+	anonymous = models.BooleanField(verbose_name="Usuário anônimo", default=False)
 	user = models.CharField(max_length=50, verbose_name="Usuário")
 	text = models.CharField(max_length=200, verbose_name="Texto")
 	lat = models.CharField(max_length=20, verbose_name='Latitude')
