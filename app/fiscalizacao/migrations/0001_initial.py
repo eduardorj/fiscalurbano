@@ -13,10 +13,11 @@ class Migration(SchemaMigration):
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('anonymous', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('user', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('text', self.gf('django.db.models.fields.CharField')(max_length=200)),
-            ('lat', self.gf('django.db.models.fields.CharField')(max_length=20)),
-            ('lon', self.gf('django.db.models.fields.CharField')(max_length=20)),
-            ('data', self.gf('django.db.models.fields.DateField')(auto_now_add=True, blank=True)),
+            ('incidentTitle', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('description', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('latitude', self.gf('django.db.models.fields.CharField')(max_length=20)),
+            ('longitude', self.gf('django.db.models.fields.CharField')(max_length=20)),
+            ('timestamp', self.gf('django.db.models.fields.DateField')()),
         ))
         db.send_create_signal(u'fiscalizacao', ['Relato'])
 
@@ -30,11 +31,12 @@ class Migration(SchemaMigration):
         u'fiscalizacao.relato': {
             'Meta': {'object_name': 'Relato'},
             'anonymous': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'data': ('django.db.models.fields.DateField', [], {'auto_now_add': 'True', 'blank': 'True'}),
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'lat': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
-            'lon': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
-            'text': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
+            'incidentTitle': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
+            'latitude': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
+            'longitude': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
+            'timestamp': ('django.db.models.fields.DateField', [], {}),
             'user': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         }
     }

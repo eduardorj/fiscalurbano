@@ -4,10 +4,11 @@ from django.db import models
 class Relato(models.Model):
 	anonymous = models.BooleanField(verbose_name="Usuário anônimo", default=False)
 	user = models.CharField(max_length=50, verbose_name="Usuário")
-	text = models.CharField(max_length=200, verbose_name="Texto")
-	lat = models.CharField(max_length=20, verbose_name='Latitude')
-	lon = models.CharField(max_length=20, verbose_name='Longitude')
-	data = models.DateField('Data criacao', auto_now_add=True)
+	incidentTitle = models.CharField(max_length=200, verbose_name="Título")
+	description = models.CharField(max_length=200, verbose_name="Descrição")
+	latitude = models.CharField(max_length=20, verbose_name='Latitude')
+	longitude = models.CharField(max_length=20, verbose_name='Longitude')
+	timestamp = models.DateField(verbose_name='Data Criação')
 	
 	def __unicode__(self):
 		return self.user
