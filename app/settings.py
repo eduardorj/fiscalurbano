@@ -46,8 +46,14 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'south',
     'app.core',
-    'app.fiscalizacao'
+    'app.fiscalizacao',
+    'rest_framework',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGINATE_BY': 10
+}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -73,7 +79,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+#DATABASES['default'] = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 
 
 # Internationalization
