@@ -57,38 +57,46 @@ $(function(){
 	var userMakers = [];
 
 
-	$('#btnVai').click(function(){		
+	
+		$('#btnVai').click(function(){
 
-		$.getJSON('http://furb.herokuapp.com/relatos/?format=json', function(data) {
-			$.each(data.results, function(index) {
-				userMakers[index] = {lat: data.results[index].latitude, lng: data.results[index].longitude, data: data.results[index].user };
-			});
-		}).done(function() {
-
-			alert(userMakers.length)
-
-			$("#map").gmap3( { 
-				action: 'addMarkers', 
-				markers: userMakers,
+			$.getJSON('http://0.0.0.0:5000/relatos/?format=json', function(data) {
 				
-				marker:{options:{ draggable: false },
-				
-				events:{
-					mouseover:function(marker, event, data){
-						$(this).gmap3({action:'addinfowindow', anchor:marker, options:{content: data}});
-					},
-					mouseout: function(){
-						var infowindow = $(this).gmap3({action:'get', name:'infowindow'});
-						if (infowindow){
-							infowindow.close();
-						}
-					}										
-				}
-				}
+				$.each(data.results, function(index) {
+					userMakers[index] = {lat: data.results[index].latitude, lng: data.results[index].longitude, data: data.results[index].user, tag:"listing"};
+				});
+
+			}).done(function() {
+
+				var clear = {action:'clear', name:'marker', tag:'listing'};
+
+				$("#map").gmap3(clear);
+
+				$("#map").gmap3( { 
+					action: 'addMarkers', 
+					markers: userMakers,
+					
+					marker:{options:{ draggable: false, animation: google.maps.Animation.DROP },
+					
+					events:{
+						mouseover:function(marker, event, data){
+							$(this).gmap3({action:'addinfowindow', anchor:marker, options:{content: data}});
+						},
+						mouseout: function(){
+							var infowindow = $(this).gmap3({action:'get', name:'infowindow'});
+							if (infowindow){
+								infowindow.close();
+							}
+						}										
+					}
+					}
+				});
+
+
 			});
 
+		});
 
-		});;
+		$('#btnVai').trigger('click');
 
-	});
 });
