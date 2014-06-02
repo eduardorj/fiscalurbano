@@ -60,7 +60,7 @@ $(function(){
 	
 		$('#btnVai').click(function(){
 
-			$.getJSON('http://0.0.0.0:5000/relatos/?format=json', function(data) {
+			$.getJSON('http://furb.herokuapp.com/relatos/?format=json', function(data) {
 				
 				$.each(data.results, function(index) {
 					userMakers[index] = {lat: data.results[index].latitude, lng: data.results[index].longitude, data: data.results[index].user, tag:"listing"};
