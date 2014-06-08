@@ -63,7 +63,7 @@ $(function(){
 			$.getJSON('http://furb.herokuapp.com/relatos/?format=json', function(data) {
 				
 				$.each(data.results, function(index) {
-					content_str = 'Por: 'data.results[index].user;
+					content_str = 'Por: ' + data.results[index].user;
 					content_str += '<br>#' + data.results[index].incidentTitle.replace(' ', '_');
 					content_str += ' ' + data.results[index].description.replace(' ', '_');
 
