@@ -3,4 +3,3 @@ venv
 *.pyc
 staticfiles
 .DS_Store
-
