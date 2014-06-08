@@ -63,7 +63,11 @@ $(function(){
 			$.getJSON('http://furb.herokuapp.com/relatos/?format=json', function(data) {
 				
 				$.each(data.results, function(index) {
-					userMakers[index] = {lat: data.results[index].latitude, lng: data.results[index].longitude, data: data.results[index].user, tag:"listing"};
+					content_str = 'Por: 'data.results[index].user;
+					content_str += '<br>#' + data.results[index].incidentTitle.replace(' ', '_');
+					content_str += ' ' + data.results[index].description.replace(' ', '_');
+
+					userMakers[index] = {lat: data.results[index].latitude, lng: data.results[index].longitude, data: content_str, tag:"listing"};
 				});
 
 			}).done(function() {
