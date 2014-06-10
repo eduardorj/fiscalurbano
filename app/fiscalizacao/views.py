@@ -20,3 +20,11 @@ class RelatoList(generics.ListCreateAPIView):
     serializer_class = RelatoSerializer
     permission_classes = (IsAdminUser,)
     paginate_by = 100
+
+    def get_paginate_by(self):
+        """
+        Use smaller pagination for HTML representations.
+        """
+        if self.request.accepted_renderer.format == 'html':
+            return 20
+        return 100

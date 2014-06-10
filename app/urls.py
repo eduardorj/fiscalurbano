@@ -19,7 +19,3 @@ urlpatterns = patterns('',
     url(r'^relatos/', generics.ListCreateAPIView.as_view(model=Relato)),
     (r'^media/(.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 )
-
-
-#url(r'^', include(router.urls)),
-    
