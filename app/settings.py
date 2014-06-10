@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'app.core',
     'app.fiscalizacao',
     'rest_framework',
+    #'django_extensions',
 )
 
 REST_FRAMEWORK = {
