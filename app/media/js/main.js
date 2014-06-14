@@ -65,7 +65,7 @@ $(function(){
 				$.each(data, function(index) {
 					content_str = 'Por: ' + data[index].user;
 					content_str += '<br>#' + data[index].incidentTitle.replace(' ', '_');
-					content_str += ' ' + data[index].description.replace(' ', '_');
+					content_str += ' ' + data[index].description;
 
 					userMakers[index] = {lat: data[index].latitude, lng: data[index].longitude, data: content_str, tag:"listing"};
 				});
