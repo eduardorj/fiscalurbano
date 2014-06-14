@@ -8,23 +8,24 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from app.fiscalizacao.permissions import IsOwnerOrReadOnly
 
-#class RelatoViewSet(viewsets.ModelViewSet):
-#    """
-#    API endpoint that allows users to be viewed or edited.
-#    """
-#    queryset = Relato.objects.all()
-#    serializer_class = RelatoSerializer
-
-class RelatoList(generics.ListCreateAPIView):
+class RelatoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
     queryset = Relato.objects.all()
     serializer_class = RelatoSerializer
-    #permission_classes = (IsAdminUser,)
     permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
 
-    def get_paginate_by(self):
-        """
-        Use smaller pagination for HTML representations.
-        """
-        #if self.request.accepted_renderer.format == 'html':
+#class RelatoList(generics.ListCreateAPIView):
+#    queryset = Relato.objects.all()
+#    serializer_class = RelatoSerializer
+    #permission_classes = (IsAdminUser,)
+#    permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
+
+#    def get_paginate_by(self):
+#        """
+#        Use smaller pagination for HTML representations.
+#        """
+#        #if self.request.accepted_renderer.format == 'html':
         #    return 100
-        return 100
+#        return 100
