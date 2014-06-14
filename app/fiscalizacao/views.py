@@ -5,8 +5,8 @@ from app.fiscalizacao.serializers import RelatoSerializer
 
 
 from rest_framework import generics
-#from rest_framework.permissions import IsAdminUser
-from fiscalizacao.permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from app.fiscalizacao.permissions import IsOwnerOrReadOnly
 
 #class RelatoViewSet(viewsets.ModelViewSet):
 #    """
@@ -19,7 +19,7 @@ class RelatoList(generics.ListCreateAPIView):
     queryset = Relato.objects.all()
     serializer_class = RelatoSerializer
     #permission_classes = (IsAdminUser,)
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
+    permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
 
     def get_paginate_by(self):
         """
