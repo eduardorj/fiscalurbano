@@ -6,4 +6,4 @@ from rest_framework import serializers
 class RelatoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Relato
-        fields = ('id','anonymous', 'user', 'incidentTitle', 'description', 'latitude', 'longitude', 'timestamp')
+        fields = ('id','anonymous', 'user', 'incidentTitle', 'description', 'latitude', 'longitude', 'timestamp', )
