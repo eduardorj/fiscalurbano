@@ -15,20 +15,3 @@ class RelatoViewSet(viewsets.ModelViewSet):
     queryset = Relato.objects.all()
     serializer_class = RelatoSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
-    #permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
-
-#    permission_classes = (IsOwnerOrReadOnly,)
-
-#class RelatoList(generics.ListCreateAPIView):
-#    queryset = Relato.objects.all()
-#    serializer_class = RelatoSerializer
-    #permission_classes = (IsAdminUser,)
-#    permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
-
-#    def get_paginate_by(self):
-#        """
-#        Use smaller pagination for HTML representations.
-#        """
-#        #if self.request.accepted_renderer.format == 'html':
-        #    return 100
-#        return 100
