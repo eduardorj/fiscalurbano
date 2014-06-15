@@ -9,7 +9,7 @@ class RelatoAdmin(admin.ModelAdmin):
 	list_filter = ('timestamp','incidentTitle',)
 
 	def get_tags(self, obj):
-		return "\n".join([p.name for p in obj.tags.all()])
+		return ", ".join(['#' + p.name for p in obj.tags.all()])
 
 class TagAdmin(admin.ModelAdmin):
 	list_display = ('name', 'size',)
