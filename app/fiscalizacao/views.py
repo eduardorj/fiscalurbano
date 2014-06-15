@@ -6,7 +6,7 @@ from app.fiscalizacao.serializers import RelatoSerializer
 
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from app.fiscalizacao.permissions import IsOwnerOrReadOnly
+#from app.fiscalizacao.permissions import IsOwnerOrReadOnly
 
 class RelatoViewSet(viewsets.ModelViewSet):
     """
@@ -14,7 +14,10 @@ class RelatoViewSet(viewsets.ModelViewSet):
     """
     queryset = Relato.objects.all()
     serializer_class = RelatoSerializer
-    permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+    #permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
+
+#    permission_classes = (IsOwnerOrReadOnly,)
 
 #class RelatoList(generics.ListCreateAPIView):
 #    queryset = Relato.objects.all()
