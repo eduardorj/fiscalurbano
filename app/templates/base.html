@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}Bootcamp{% endblock %}</title>
+    {% block head %}
+    {% endblock head %}
+  </head>
+  <body>
+    {% block body %}
+      <header>
+      <main>  
+        <div>
+          {% block main %}
+          {% endblock main %}
+        </div>
+      </main>
+    {% endblock body %}
+  </body>
+</html>

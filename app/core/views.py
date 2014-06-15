@@ -1,6 +1,6 @@
-from app.fiscalizacao.models import Relato
+from app.fiscalizacao.models import Relato, Tag
 from django.conf import settings
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.contrib.gis.shortcuts import render_to_kml
 
 def homepage(request):
@@ -12,9 +12,6 @@ def generateKml(request):
 	relatos = Relato.objects.all() 
 	return render_to_kml('location.html', {'relatos':relatos})
 
-def save_events_json(request):
-	print "entrou"
-	if request.is_ajax():
-		if request.method == 'POST':
-			print 'Raw Data: "%s"' % request.raw_post_data
-			return HttpResponse("OK")
+def tags(request):
+    tags = Tag.objects.all()
+    return render(request, 'tags.html', {'tags': tags})
