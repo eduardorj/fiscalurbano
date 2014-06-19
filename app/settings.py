@@ -74,7 +74,6 @@ ROOT_URLCONF = 'app.urls'
 
 WSGI_APPLICATION = 'app.wsgi.application'
 
-
 if ("Virtualenvs" in PROJECT_DIR):
     DATABASES = {
         'default': {
@@ -120,5 +119,10 @@ TEMPLATE_DIRS = (
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+
+AUTH_PROFILE_MODULE = "account.UserProfile"
+
+
 
 
