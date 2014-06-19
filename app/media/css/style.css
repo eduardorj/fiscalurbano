@@ -91,3 +91,17 @@ box-shadow: 0 0 50px 12px #000000;
 .footer-01 p strong {color:#c00;}
 .footer-02 {height:auto;background:#10100f url(../images/bg-header.jpg) repeat-x left -7px;position:relative;z-index:1;padding:7px 10px;color:#b7b4ac;}
 
+
+.tag-cloud a.size-1 { font-size: 1.1em }
+.tag-cloud a.size-2 { font-size: 1.2em }
+.tag-cloud a.size-3 { font-size: 1.3em }
+.tag-cloud a.size-4 { font-size: 1.4em }
+.tag-cloud a.size-5 { font-size: 1.5em }
+.tag-cloud a.size-6 { font-size: 1.6em }
+.tag-cloud a.size-7 { font-size: 1.7em }
+.tag-cloud a.size-8 { font-size: 1.8em }
+.tag-cloud a.size-9 { font-size: 1.9em }
+.tag-cloud a.size-10 { font-size: 2em }
+
+
+

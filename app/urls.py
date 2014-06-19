@@ -4,6 +4,7 @@ from django.contrib import admin
 from fiscalizacao import views
 from core.views import *
 
+
 admin.autodiscover()
 
 router = routers.DefaultRouter()

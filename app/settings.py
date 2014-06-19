@@ -83,7 +83,9 @@ if ("Virtualenvs" in PROJECT_DIR):
         }
     }
 else:
-    DATABASES = { 'default': dj_database_url.config(default=os.environ.get('DATABASE_URL')) }
+    DATABASES['default'] = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+    #DATABASES = { 'default': dj_database_url.config(default=os.environ.get('DATABASE_URL')) }
 
 
 # Internationalization

@@ -3,6 +3,10 @@ from django.contrib import admin
 from django.db import models
 from django.forms import CheckboxSelectMultiple
 
+#from django.contrib.gis import admin
+#from models import WorldBorder
+
+
 class RelatoAdmin(admin.ModelAdmin):
 	list_display = ('user', 'anonymous', 'incidentTitle', 'description', 'latitude', 'longitude', 'timestamp', 'get_tags')
 	date_hierarchy = 'timestamp'
@@ -15,6 +19,8 @@ class TagAdmin(admin.ModelAdmin):
 	list_display = ('name', 'size',)
 	list_filter = ('name','size',)
 
+
+#admin.site.register(WorldBorder, admin.GeoModelAdmin)
 admin.site.register(Relato, RelatoAdmin)
 admin.site.register(Tag, TagAdmin)
 
