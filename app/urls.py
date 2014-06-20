@@ -9,6 +9,7 @@ admin.autodiscover()
 
 router = routers.DefaultRouter()
 router.register(r'relatos', views.RelatoViewSet)
+router.register(r'users', views.UserViewSet)
 
 urlpatterns = patterns('',
 	(r'^$', homepage),

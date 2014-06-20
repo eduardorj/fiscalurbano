@@ -9,17 +9,18 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'UserProfile'
-        db.create_table(u'core_userprofile', (
+        db.create_table(u'fiscalizacao_userprofile', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'], unique=True)),
-            ('phone', self.gf('django.db.models.fields.IntegerField')(unique=True, max_length=13)),
+            ('user', self.gf('django.db.models.fields.related.ForeignKey')(related_name='user_profile', unique=True, to=orm['auth.User'])),
+            ('url', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
+            ('company', self.gf('django.db.models.fields.CharField')(max_length=50, blank=True)),
         ))
-        db.send_create_signal(u'core', ['UserProfile'])
+        db.send_create_signal(u'fiscalizacao', ['UserProfile'])
 
 
     def backwards(self, orm):
         # Deleting model 'UserProfile'
-        db.delete_table(u'core_userprofile')
+        db.delete_table(u'fiscalizacao_userprofile')
 
 
     models = {
@@ -59,12 +60,31 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        u'core.userprofile': {
-            'Meta': {'object_name': 'UserProfile'},
+        u'fiscalizacao.relato': {
+            'Meta': {'object_name': 'Relato'},
+            'anonymous': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'phone': ('django.db.models.fields.IntegerField', [], {'unique': 'True', 'max_length': '13'}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.User']", 'unique': 'True'})
+            'incidentTitle': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
+            'latitude': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
+            'longitude': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
+            'tags': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['fiscalizacao.Tag']", 'symmetrical': 'False'}),
+            'timestamp': ('django.db.models.fields.DateField', [], {}),
+            'user': ('django.db.models.fields.CharField', [], {'max_length': '50'})
+        },
+        u'fiscalizacao.tag': {
+            'Meta': {'object_name': 'Tag'},
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '20'}),
+            'size': ('django.db.models.fields.IntegerField', [], {'default': '1'})
+        },
+        u'fiscalizacao.userprofile': {
+            'Meta': {'object_name': 'UserProfile'},
+            'company': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'user_profile'", 'unique': 'True', 'to': u"orm['auth.User']"})
         }
     }
 
-    complete_apps = ['core']
+    complete_apps = ['fiscalizacao']

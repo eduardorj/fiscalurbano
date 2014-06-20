@@ -20,7 +20,6 @@ class TagAdmin(admin.ModelAdmin):
 	list_filter = ('name','size',)
 
 
-#admin.site.register(WorldBorder, admin.GeoModelAdmin)
 admin.site.register(Relato, RelatoAdmin)
 admin.site.register(Tag, TagAdmin)
 

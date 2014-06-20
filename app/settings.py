@@ -48,7 +48,7 @@ INSTALLED_APPS = (
     'app.core',
     'app.fiscalizacao',
     'rest_framework',
-    #'django_extensions',
+    'django_extensions',
 )
 
 REST_FRAMEWORK = {
@@ -121,7 +121,7 @@ MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
-AUTH_PROFILE_MODULE = "account.UserProfile"
+AUTH_PROFILE_MODULE = "fiscalizacao.UserProfile"
 
 
 

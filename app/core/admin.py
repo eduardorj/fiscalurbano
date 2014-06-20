@@ -1,7 +1,6 @@
-from app.core.models import UserProfile
-from django.contrib import admin
-from django.db import models
-from django.contrib.auth.models import User
+#from app.core.models import UserProfile
+#from django.contrib import admin
+#from django.db import models
 
 #admin.site.unregister(User)
 
