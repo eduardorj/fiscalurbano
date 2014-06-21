@@ -21,15 +21,18 @@ class RelatoViewSet(viewsets.ModelViewSet):
 #        user = self.request.user
 #        return User.objects.all()
 
-class UserViewSet(generics.GenericAPIView):
+class UserViewSet(viewsets.ModelViewSet):
 
-    queryset = User.objects.all()
+    model = User
     serializer_class = UserSerializer
-    #permission_classes = (IsAdminUser,IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+    def get_queryset(self):
+    	if self.request.user.is_staff:
+        	return User.objects.all()
+        else:
+        	return User.objects.filter(id = self.request.user.id)
+
 
     #def pre_save(self, obj):
     #    pass
-
-#    def get_queryset(self):
-#        user = self.request.user
-#        return User.objects.all()
