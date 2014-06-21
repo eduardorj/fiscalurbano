@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
-#from django.core.validators import RegexValidator
+from django.core.validators import RegexValidator
 
 
 class Tag(models.Model):
@@ -37,9 +37,8 @@ class Relato(models.Model):
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User, unique=True, related_name="user_profile")
-    url = models.URLField("Website", blank=True)
-    company = models.CharField(max_length=50, blank=True)
-
+    mobile = models.IntegerField(max_length=13, unique=True, validators=[RegexValidator(regex='^\d{13}$', message='Length has to be 13', code='Invalid number')])
+  
     def __unicode__(self):
     	return self.user
 
@@ -47,19 +46,3 @@ class UserProfile(models.Model):
 		verbose_name = u'Usuário'
 		verbose_name_plural = u'Usuários'
 
-
-    #User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
-
-
-"""
-class UserProfile(models.Model):
-	user = models.ForeignKey(User, unique=True)
-	phone = models.IntegerField(max_length=13, unique=True, validators=[RegexValidator(regex='^\d{13}$', message='Length has to be 13', code='Invalid number')])
-
-	def __unicode__(self):
-		return self.phone
-
-	class Meta:
-		verbose_name = u'Usuário'
-		verbose_name_plural = u'Usuários'
-"""

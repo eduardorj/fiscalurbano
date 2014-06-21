@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-from app.fiscalizacao.models import Relato
+from app.fiscalizacao.models import Relato, UserProfile
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
@@ -15,18 +15,16 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        fields = ('url', 'username', 'first_name', 'last_name', 'email', 'mobile',)
+        fields = ('id', 'url', 'username', 'email', 'mobile',)
 
     def get_mobile(self, obj):
-    	foo = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
-    	return obj.get_profile().url
-
-
-    #favourite_locations = serializers.SerializerMethodField('get_favourite_locations')
-
-
-#    def get_mobile(self, obj):
-#        return obj.get_profile().mobile
-
-#    def get_favourite_locations(self, obj):
-#        return obj.get_profile().favourite_locations
+        
+        profile = None
+        
+        try:
+            profile = obj.get_profile()
+        except UserProfile.DoesNotExist:
+            profile = UserProfile.objects.get_or_create(user=obj, mobile="0000000000001")
+            #profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
+        
+        return profile.mobile
