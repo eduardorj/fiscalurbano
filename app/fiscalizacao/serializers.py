@@ -3,7 +3,6 @@ from app.fiscalizacao.models import Relato, UserProfile
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-
 class RelatoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Relato
@@ -11,20 +10,15 @@ class RelatoSerializer(serializers.HyperlinkedModelSerializer):
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
 
-    mobile = serializers.SerializerMethodField('get_mobile')
+    nick = serializers.SerializerMethodField('get_nick')
+    mood = serializers.SerializerMethodField('get_mood')
 
     class Meta:
         model = User
-        fields = ('id', 'url', 'username', 'email', 'mobile',)
+        fields = ('id', 'url', 'username', 'email', 'nick', 'mood',)
 
-    def get_mobile(self, obj):
-        
-        profile = None
-        
-        try:
-            profile = obj.get_profile()
-        except UserProfile.DoesNotExist:
-            profile = UserProfile.objects.get_or_create(user=obj, mobile="0000000000001")
-            #profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
-        
-        return profile.mobile
+    def get_nick(self, obj):
+        return obj.profile.nick
+
+    def get_mood(self, obj):
+        return obj.profile.mood

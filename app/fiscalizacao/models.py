@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 
+from django.db.models.signals import post_save
 
 class Tag(models.Model):
 	name = models.SlugField(max_length=20, verbose_name="Tag", db_index=True, unique=True, help_text="Nome da Tag exibida no portal")
@@ -25,9 +26,6 @@ class Relato(models.Model):
 	timestamp = models.DateField(verbose_name='Data Criação')
 	tags = models.ManyToManyField(Tag, verbose_name='Tags')
 
-	#def get_tags(self):
-	#	return ", ".join(['#' + p.name for p in self.tags.all()])
-
 	def __unicode__(self):
 		return self.user
 	
@@ -37,8 +35,9 @@ class Relato(models.Model):
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User, unique=True, related_name="user_profile")
-    mobile = models.IntegerField(max_length=13, unique=True, validators=[RegexValidator(regex='^\d{13}$', message='Length has to be 13', code='Invalid number')])
-  
+    mood = models.CharField(max_length=30, verbose_name="Mood do Usuário", null=True, blank=False)
+    nick = models.CharField(max_length=30, verbose_name="Apelido", null=True, blank=False)
+
     def __unicode__(self):
     	return self.user
 
@@ -46,3 +45,4 @@ class UserProfile(models.Model):
 		verbose_name = u'Usuário'
 		verbose_name_plural = u'Usuários'
 
+User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])

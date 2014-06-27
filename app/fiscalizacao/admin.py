@@ -3,9 +3,18 @@ from django.contrib import admin
 from django.db import models
 from django.forms import CheckboxSelectMultiple
 
-#from django.contrib.gis import admin
-#from models import WorldBorder
+from app.fiscalizacao.models import UserProfile
+from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 
+class UserProfileInline(admin.StackedInline):
+	model = UserProfile
+	max_num = 1
+	fk_name = 'user'
+	can_delete = False
+
+class UserAdmin(AuthUserAdmin):
+	inlines = [UserProfileInline]
 
 class RelatoAdmin(admin.ModelAdmin):
 	list_display = ('user', 'anonymous', 'incidentTitle', 'description', 'latitude', 'longitude', 'timestamp', 'get_tags')
@@ -19,12 +28,8 @@ class TagAdmin(admin.ModelAdmin):
 	list_display = ('name', 'size',)
 	list_filter = ('name','size',)
 
-
 admin.site.register(Relato, RelatoAdmin)
 admin.site.register(Tag, TagAdmin)
 
-
-
-#formfield_overrides = {
-#    models.ManyToManyField: {'widget': CheckboxSelectMultiple},
-#}
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)

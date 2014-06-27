@@ -12,8 +12,8 @@ class Migration(SchemaMigration):
         db.create_table(u'fiscalizacao_userprofile', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('user', self.gf('django.db.models.fields.related.ForeignKey')(related_name='user_profile', unique=True, to=orm['auth.User'])),
-            ('url', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
-            ('company', self.gf('django.db.models.fields.CharField')(max_length=50, blank=True)),
+            ('mood', self.gf('django.db.models.fields.CharField')(max_length=30, null=True)),
+            ('nick', self.gf('django.db.models.fields.CharField')(max_length=30, null=True)),
         ))
         db.send_create_signal(u'fiscalizacao', ['UserProfile'])
 
@@ -80,9 +80,9 @@ class Migration(SchemaMigration):
         },
         u'fiscalizacao.userprofile': {
             'Meta': {'object_name': 'UserProfile'},
-            'company': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
+            'mood': ('django.db.models.fields.CharField', [], {'max_length': '30', 'null': 'True'}),
+            'nick': ('django.db.models.fields.CharField', [], {'max_length': '30', 'null': 'True'}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'user_profile'", 'unique': 'True', 'to': u"orm['auth.User']"})
         }
     }

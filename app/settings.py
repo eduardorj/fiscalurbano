@@ -120,7 +120,6 @@ MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-
 AUTH_PROFILE_MODULE = "fiscalizacao.UserProfile"
 
 

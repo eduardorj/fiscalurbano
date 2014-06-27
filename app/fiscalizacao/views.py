@@ -13,14 +13,6 @@ class RelatoViewSet(viewsets.ModelViewSet):
     serializer_class = RelatoSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
-#class UserList(generics.ListAPIView):
-
-#    serializer_class = UserSerializer
-
-#    def get_queryset(self):
-#        user = self.request.user
-#        return User.objects.all()
-
 class UserViewSet(viewsets.ModelViewSet):
 
     model = User
